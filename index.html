@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <title>Ashim Poudel - Front-End Developer, programmer & Tech Enthusiast</title>
+    <meta name="description" content="Ashim Poudel - Front-End Developer and Tech Enthusiast. View my portfolio, skills, and projects.">
+    <meta name="keywords" content="Ashim Poudel, Front-End Developer, Tech Enthusiast, Web Developer, Portfolio">
+    <meta name="author" content="Ashim Poudel">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Ashim Poudel - Front-End Developer">
+    <meta property="og:description" content="Front-End Developer and Tech Enthusiast Portfolio">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="#home">AP</a>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#certificates" class="nav-link">Certificates</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+                <div class="dark-mode-toggle">
+                    <input type="checkbox" id="toggle-mode">
+                    <label for="toggle-mode" class="toggle-switch">
+                        <span class="toggle-thumb"></span>
+                    </label>
+                    <span id="mode-label">Dark-Mode</span>
+                </div>
+
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+        <div class="scroll-progress" id="scroll-progress"></div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg">
+            <div class="particles" id="particles"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text" data-aos="fade-up" data-aos-delay="200">
+                <h1>Hi, I'm <span class="highlight">Ashim Poudel</span></h1>
+                <div class="typing-container">
+                    <span class="typing-text">I'm a </span>
+                    <span class="typed-text" id="typed-text"></span>
+                    <span class="cursor">|</span>
+                </div>
+                <p>Passionate about creating beautiful and functional web experiences</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Let's Connect</a>
+                </div>
+            </div>
+            <div class="hero-image" data-aos="fade-left" data-aos-delay="400">
+                <!-- EDIT: Replace src with your actual photo -->
+                <img src="https://scontent.fktm9-2.fna.fbcdn.net/v/t1.6435-9/135312547_841123213393587_5793219752673841839_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeEn4Dogk2QcVahsGHzd6duoG9aH7Kd81wUb1ofsp3zXBYsDJBhKRlPeyWJl9p7S2rnwPw7YH9TplWUo-NaF70PY&_nc_ohc=_9bVVcS2SSQQ7kNvwFRMFJw&_nc_oc=Adkbh5wgB0Yrf5jrHTBAYmS-qTF3QUyf9Q97GChM-gkjlz8wCT63u1QwFPGnsAWwU1U&_nc_zt=23&_nc_ht=scontent.fktm9-2.fna&_nc_gid=zGVxNuZIRcDBbi2EEhMpLA&oh=00_AfPi-sFo2Hky7b77LVsNbf6qvD87dInPQu15x_HX7AOmQw&oe=6881AA34" alt="Ashim Poudel" id="hero-photo">
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">About Me</h2>
+            <div class="about-content">
+                <div class="about-image" data-aos="fade-right">
+                    <!-- EDIT: Replace src with your actual photo -->
+                    <img src="https://scontent.fktm1-1.fna.fbcdn.net/v/t39.30808-6/347379080_599726065243657_5650234923467051438_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=FsIyfQ_ilsYQ7kNvwFzTGfu&_nc_oc=Adl5Hy-_lZqxBxKHyWf3EQWuPs4AXia5c5NqSxqqmGi-SaTaOFdkPFwQP4_SxxdDfyYFsD6igiVWW76qREJAus-Y&_nc_zt=23&_nc_ht=scontent.fktm1-1.fna&_nc_gid=3Fy9O_TRhz8s75a9bFH2Cw&oh=00_AfQ8YxJnH9Y0ibTKKTfbeVJhM_F2UeEA97N4sLNdh3b4Rg&oe=6872B8B7" alt="Ashim Poudel" id="about-photo">
+                </div>
+                <div class="about-text" data-aos="fade-left">
+                    <!-- EDIT: Customize your bio text here -->
+                    <p>Hello! I'm Ashim, a passionate Front-End Developer and Tech Enthusiast based in Pokhara. I enjoy creating things that live on the internet, whether that be websites, applications, or anything in between.</p>
+                    
+                    <p>My interest in web development started back in 2024 when I decided to try editing custom themes — turns out hacking together HTML & CSS taught me a lot about web development!</p>
+                    
+                    <p>Fast-forward to today, and I've had the privilege of working on various projects ranging from small business websites to large-scale web applications. My focus these days is on building accessible, inclusive products and digital experiences for a variety of clients.</p>
+                    
+                    <div class="about-stats">
+                        <div class="stat" data-aos="zoom-in" data-aos-delay="100">
+                            <h3 id="projects-count">0</h3>
+                            <p>Projects Completed</p>
+                        </div>
+                        <div class="stat" data-aos="zoom-in" data-aos-delay="200">
+                            <h3 id="experience-years">0</h3>
+                            <p>Years Experience</p>
+                        </div>
+                        <div class="stat" data-aos="zoom-in" data-aos-delay="300">
+                            <h3 id="happy-clients">0</h3>
+                            <p>Happy Clients</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Skills & Technologies</h2>
+            <div class="skills-grid">
+                <!-- EDIT: Add/remove/modify skills as needed -->
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="skill-icon">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <h3>HTML5</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="90"></div>
+                    </div>
+                </div>
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="skill-icon">
+                        <i class="fab fa-css3-alt"></i>
+                    </div>
+                    <h3>CSS3</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="85"></div>
+                    </div>
+                </div>
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="skill-icon">
+                        <i class="fab fa-js-square"></i>
+                    </div>
+                    <h3>JavaScript</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="80"></div>
+                    </div>
+                </div>
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="skill-icon">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <h3>React</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="75"></div>
+                    </div>
+                </div>
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="500">
+                    <div class="skill-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3>Python</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="70"></div>
+                    </div>
+                </div>
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="600">
+                    <div class="skill-icon">
+                        <i class="fab fa-git-alt"></i>
+                    </div>
+                    <h3>Git</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="85"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="certificates">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Certificates & Achievements</h2>
+            <div class="certificates-grid">
+                <!-- EDIT: Add/remove/modify certificates as needed -->
+                <div class="certificate-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="certificate-image">
+                        <img src="python_beginner.png" alt="Python Beginner Certificate">
+                        <div class="certificate-overlay">
+                            <div class="certificate-icon">
+                                <i class="fab fa-python"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Python Beginner Course</h3>
+                        <p>Fundamentals of Python programming, data types, control structures, and basic object-oriented programming concepts.</p>
+                        <div class="certificate-details">
+                            <span class="certificate-provider">simplilearn skillup</span>
+                            <span class="certificate-date">2025</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="certificate-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="certificate-image">
+                        <img src="Python_advance.png" alt="Python Advanced Certificate">
+                        <div class="certificate-overlay">
+                            <div class="certificate-icon">
+                                <i class="fab fa-python"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Python Advanced Course</h3>
+                        <p>Advanced Python concepts including decorators, generators, async programming, and advanced data structures.</p>
+                        <div class="certificate-details">
+                            <span class="certificate-provider">simplilearn skillup</span>
+                            <span class="certificate-date">2025</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="certificate-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="certificate-image">
+                        <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop" alt="Full Stack Development Certificate">
+                        <div class="certificate-overlay">
+                            <div class="certificate-icon">
+                                <i class="fas fa-layer-group"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Full Stack Development</h3>
+                        <p>Complete web development stack including frontend, backend, databases, and deployment technologies.</p>
+                        <div class="certificate-details">
+                            <span class="certificate-provider">GeekforGeeks</span>
+                            <span class="certificate-date">2025</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="certificate-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="certificate-image">
+                        <img src="excel.png" alt="Excel Certificate">
+                        <div class="certificate-overlay">
+                            <div class="certificate-icon">
+                                <i class="fas fa-file-excel"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Excel skill certificate</h3>
+                        <p>Advanced Excel functions, data analysis, pivot tables, macros, and business intelligence tools.</p>
+                        <div class="certificate-details">
+                            <span class="certificate-provider">Oneroadmaps</span>
+                            <span class="certificate-date">2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Featured Projects</h2>
+            <div class="projects-grid">
+                <!-- EDIT: Add/remove/modify projects as needed -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-image">
+                        <img src="ecommerce.png" alt="Project 1">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" title="View Live"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link" title="View Code"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>E-Commerce Platform</h3>
+                        <p>A full-stack e-commerce solution built with modern technologies, featuring user authentication, payment integration, and admin panel.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop" alt="Project 2">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" title="View Live"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link" title="View Code"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Task Management App</h3>
+                        <p>A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">Socket.io</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-image">
+                        <img src="space_invader.png" alt="Project 3">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" title="View Live"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="https://github.com/a4-program/Ashim-poudel" target="_blank" class="project-link" title="View Code"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                <div class="project-content">
+                        <h3>Space invader game</h3>
+                        <p>A Funny game made by using pyton for the entertainment purpose while learning pygame library in python </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">freecode.py</span>
+                            <span class="tech-tag">auth.py</span>
+                            <span class="tech-tag">user_data.json</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?w=600&h=400&fit=crop" alt="Project 3">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" title="View Live"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link" title="View Code"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Weather Dashboard</h3>
+                        <p>A responsive weather application with location-based forecasts, interactive maps, and detailed weather analytics.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">API</span>
+                            <span class="tech-tag">Chart.js</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="resume-section" data-aos="fade-up" data-aos-delay="400">
+                <h3>Want to know more about my experience?</h3>
+                <p>Download my resume to see my full work history and qualifications</p>
+                <!-- EDIT: Replace href with your actual resume file -->
+                <a href="My_resume.pdf" class="btn btn-primary resume-btn" id="resume-btn">
+                    <i class="fas fa-download"></i> Download Resume
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right">
+                    <h3>Let's work together!</h3>
+                    <p>I'm always interested in hearing about new opportunities and exciting projects. Whether you're a company looking to hire, or you're an entrepreneur looking to build something great, I'd love to hear from you.</p>
+                    
+                    <div class="contact-details">
+                        <!-- EDIT: Replace with your actual contact information -->
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>poudela2003@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+977 9842007636</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-location-dot"></i>
+                            <span>Pokhara, Nepal</span>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <!-- EDIT: Replace href with your actual social media links -->
+                        <a href="https://www.linkedin.com/in/ashim-poudel-6a475a36b/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/a4-program" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.facebook.com/asim.paudel.4" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/poudel.ashim/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <form class="contact-form" data-aos="fade-left" id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                        <span class="error-message" id="name-error"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                        <span class="error-message" id="email-error"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                        <span class="error-message" id="subject-error"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <span class="error-message" id="message-error"></span>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">
+                        <span class="btn-text">Send Message</span>
+                        <div class="loading-spinner" id="loading-spinner"></div>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Ashim Poudel. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div class="modal" id="success-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Message Sent!</h3>
+                <span class="close-modal" id="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>Thank you for reaching out! I'll get back to you as soon as possible.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+    <script src="server.js"></script>
+    <script>
+  
+const toggle = document.getElementById('toggle-mode');
+const modeLabel = document.getElementById('mode-label');
+
+// Load saved theme
+window.addEventListener('DOMContentLoaded', () => {
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+    toggle.checked = true;
+    modeLabel.textContent = 'Light Mode'; // show "Light Mode" when in dark
+  } else {
+    modeLabel.textContent = 'Dark Mode';
+  }
+});
+
+toggle.addEventListener('change', () => {
+  document.body.classList.toggle('dark-mode');
+  const isDark = document.body.classList.contains('dark-mode');
+
+  modeLabel.textContent = isDark ? 'Light Mode' : 'Dark Mode';
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+});
+
+
+  // Load saved theme on page load
+  window.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark-mode');
+    }
+  });
+</script>
+
+</body>
+</html>
