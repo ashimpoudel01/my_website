@@ -1,9 +1,16 @@
 // server.js
+require('dotenv').config();
+
+// --- DEBUGGING: Check if environment variables are loaded ---
+console.log('--- Checking Environment Variables ---');
+console.log('EMAIL_USER Loaded:', process.env.EMAIL_USER);
+console.log('EMAIL_PASS Loaded:', process.env.EMAIL_PASS ? 'Yes' : 'No');
+console.log('------------------------------------');
+
 const express = require('express');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const { PassThrough } = require('nodemailer/lib/xoauth2');
 
 const app = express();
 const PORT = 3000;
@@ -17,23 +24,20 @@ app.use(bodyParser.json());
 app.post('/send', async (req, res) => {
     const { name, email, subject, message } = req.body;
 
-   require('dotenv').config();
+    const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: process.env.EMAIL_USER,
+            pass: process.env.EMAIL_PASS
+        }
+    });
 
-const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: pass.env.EMAIL_USER,
-        pass: Pass.env.EMAIL_PASS
-    }
-});
-    // ...existing code...
     const mailOptions = {
-        from: email, // your Gmail address
-        to: 'poudela2003@gmail.com',   // your Gmail address (or wherever you want to receive messages)
+        from: email,
+        to: process.env.EMAIL_USER,
         subject: `New message from ${name}: ${subject}`,
         text: `From: ${name} <${email}>\n\n${message}`
-};
-// ...existing code...
+    };
 
     try {
         await transporter.sendMail(mailOptions);
