@@ -1,0 +1,89 @@
+# Project Documentation: Personal Portfolio Website
+
+## 1. Project Overview
+
+This is a modern, single-page personal portfolio website designed to showcase your skills, projects, and contact information. It features a responsive layout, smooth animations, and a fully functional contact form that sends emails directly to your inbox. The project is deployed on Vercel's serverless platform for high performance and reliability.
+
+## 2. Technology Stack
+
+*   **Frontend:**
+    *   **HTML5:** For the core structure and content.
+    *   **CSS3:** For styling, responsiveness, and animations.
+    *   **JavaScript (ES6+):** For interactivity, DOM manipulation, and handling the contact form submission.
+    *   **GSAP & AOS:** JavaScript libraries used for advanced scroll-based and element animations.
+
+*   **Backend (Serverless API):**
+    *   **Node.js:** The JavaScript runtime environment for the backend.
+    *   **Nodemailer:** A Node.js library to send emails from the server.
+    *   **dotenv:** A module to manage secret credentials (like email passwords) using a `.env` file for local development.
+
+*   **Deployment & Hosting:**
+    *   **Vercel:** A serverless cloud platform for hosting the website and the backend API function.
+    *   **Git & GitHub:** For version control and to trigger automatic deployments to Vercel.
+
+## 3. Project Structure
+
+The project is structured to be compatible with Vercel's zero-configuration deployment model.
+
+```
+/
+├── api/
+│   └── send.js        # The serverless function that handles email sending.
+│
+├── public/
+│   ├── index.html     # The main HTML file.
+│   ├── style.css      # The main stylesheet.
+│   ├── script.js      # The main JavaScript file for the frontend.
+│   └── ... (images, resume.pdf, etc.)
+│
+├── .gitignore         # Tells Git which files to ignore (like node_modules and .env).
+└── package.json       # Lists project dependencies and scripts.
+```
+
+## 4. How the Contact Form Works
+
+This diagram shows the complete flow from a user submitting the form to you receiving the email.
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant Browser (Frontend)
+    participant Vercel API (Backend)
+    participant Gmail
+
+    User->>Browser: Fills out and submits the contact form.
+    Browser->>Vercel API: Sends form data via a POST request to /api/send.
+    Vercel API->>Gmail: Uses Nodemailer and your secure credentials to send the email.
+    Gmail-->>Vercel API: Confirms the email was sent.
+    Vercel API-->>Browser: Returns a success message (JSON).
+    Browser->>User: Shows the "Message Sent!" success pop-up.
+```
+
+## 5. How to Run the Project Locally
+
+The project now uses the **Vercel CLI** for local development, which perfectly simulates the live environment.
+
+1.  **Install Vercel CLI (if you haven't):**
+    `npm install -g vercel`
+2.  **Start the Development Server:**
+    `vercel dev`
+3.  **Open in Browser:** The server will start, usually on `http://localhost:3001`.
+
+## 6. Summary of Fixes & Troubleshooting Journey
+
+Our journey to get the contact form working involved several key steps to solve different types of errors:
+
+1.  **Initial Problem:** Emails were not sending from the local server.
+    *   **Fix:** Corrected `server.js` to properly use `process.env` variables and fixed the `.env` file format.
+
+2.  **Connection Errors:** The frontend couldn't connect to the local backend server (`ERR_CONNECTION_REFUSED`).
+    *   **Fix:** Established the correct local workflow: running the backend server and the frontend server (`http-server`) in two separate terminals.
+
+3.  **Authentication Errors (`EAUTH`):** Gmail was rejecting the login credentials.
+    *   **Fix:** Confirmed the need for a **Google App Password** instead of the regular account password and ensured the `.env` file was named correctly.
+
+4.  **Deployment Errors on Vercel (`404` & `405`):** The live website could not find the API endpoint.
+    *   **Fix (Multi-step):**
+        *   Restructured the project into the standard `public/` and `api/` directories.
+        *   Removed the `vercel.json` configuration file to rely on Vercel's simpler, zero-configuration defaults.
+        *   **Final Breakthrough:** Refactored the backend from an Express.js app into a **native Vercel Serverless Function**. This eliminated all routing conflicts and was the key to making both the local `vercel dev` server and the live deployment work perfectly. 
