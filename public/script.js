@@ -423,7 +423,7 @@ async function submitFormToServer() {
 
     try {
         // Updated to match your Vercel serverless function endpoint
-        const response = await fetch('/api', {
+        const response = await fetch('/api/send', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
