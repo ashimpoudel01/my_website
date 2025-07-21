@@ -1,11 +1,5 @@
-// server.js
+// api/index.js
 require('dotenv').config();
-
-// --- DEBUGGING: Check if environment variables are loaded ---
-console.log('--- Checking Environment Variables ---');
-console.log('EMAIL_USER Loaded:', process.env.EMAIL_USER);
-console.log('EMAIL_PASS Loaded:', process.env.EMAIL_PASS ? 'Yes' : 'No');
-console.log('------------------------------------');
 
 const express = require('express');
 const nodemailer = require('nodemailer');
@@ -13,7 +7,6 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 
 const app = express();
-const PORT = 3000;
 
 // Middleware
 app.use(cors());
@@ -47,6 +40,5 @@ app.post('/send', async (req, res) => {
     }
 });
 
-app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
-});
+// Export the app for Vercel
+module.exports = app;

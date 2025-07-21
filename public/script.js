@@ -422,8 +422,8 @@ async function submitFormToServer() {
     console.log('Sending form data:', formData);
 
     try {
-        // Updated to match your Node.js server endpoint
-        const response = await fetch('http://127.0.0.1:3000/send', {
+        // Updated to match your Vercel serverless function endpoint
+        const response = await fetch('/api', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
