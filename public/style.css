@@ -320,7 +320,7 @@ body.dark-mode nav{
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
-    position: relative;
+    position: relative; 
     z-index: 2;
 }
 
