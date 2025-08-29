@@ -2,7 +2,7 @@
 let currentSection = 'home';
 const typedTexts = [
     'Programmer',
-    'Full stack Developer',
+    'Cybersecurity Learner',
     'Tech Enthusiast', 
     'Problem Solver',
     'Creative Thinker'
