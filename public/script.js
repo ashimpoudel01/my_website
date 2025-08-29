@@ -304,9 +304,9 @@ function initializeSkillBars() {
 // ===== COUNTERS ANIMATION =====
 function initializeCounters() {
     const counters = [
-        { element: document.getElementById('projects-count'), target: 10 },
-        { element: document.getElementById('experience-years'), target: 1 },
-        { element: document.getElementById('happy-clients'), target: 5}
+        { element: document.getElementById('projects-count'), target: 0 },
+        { element: document.getElementById('experience-years'), target: 0 },
+        { element: document.getElementById('happy-clients'), target: 0}
     ];
     
     const observer = new IntersectionObserver((entries) => {
